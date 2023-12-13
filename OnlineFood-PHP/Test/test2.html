@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Delivery Option and Charge</title>
+<script>
+function updateDeliveryCharge() {
+  var deliveryOption = document.getElementById("delivery-options").value;
+  var chargeText = document.getElementById("delivery-charge");
+
+  if (deliveryOption === "Delivery") {
+    chargeText.innerText = "Delivery Charge: Free";
+  } else if (deliveryOption === "Self Pick-Up") {
+    chargeText.innerText = "Delivery Charge: None";
+  }
+}
+</script>
+</head>
+<body>
+
+<h2>Select Delivery Option</h2>
+
+<select id="delivery-options" onchange="updateDeliveryCharge()">
+  <option value="Self Pick-Up">Self Pick-Up</option>
+  <option value="Delivery">Delivery</option>
+</select>
+
+<p id="delivery-charge">Delivery Charge: None</p> <!-- Default text -->
+
+</body>
+</html>
